@@ -42,10 +42,12 @@ public class PersonGenerator
             title = SafeInput.getNonZeroLenString(inStream, "Enter Title of Person (a string like Mr., Mrs., Ms., Dr., etc.)");
             yearOfBirth = SafeInput.getRangedInt(inStream, "Enter Person's Birth Year", 1940, 2000);
 
+            //Person object created from imput information
             Person PersonRecord = new Person(ID, firstName, lastName, title, yearOfBirth);
 
             System.out.println(PersonRecord.toCSVDataRecord());
 
+            //Person objects are added to Person Array
             PersonRecordArray.add(PersonRecord);
 
             if(!newPerson)
@@ -63,7 +65,7 @@ public class PersonGenerator
         // (may need to adjust for other IDE)
         // Not sure if the toolkit is thread safe...
         File workingDirectory = new File(System.getProperty("user.dir"));
-        Path file = Paths.get(workingDirectory.getPath() + "\\src\\PersonTestData.txt");
+        Path file = Paths.get(workingDirectory.getPath() + "/src/PersonTestData.txt");
 
         System.out.println(file);
 
@@ -78,6 +80,7 @@ public class PersonGenerator
 
             // Finally can write the file LOL!
 
+            //Person array is traversed for writing CSV records to text file
             for(Person PersonRecord : PersonRecordArray)
             {
                 String CSVRecord = PersonRecord.toCSVDataRecord();

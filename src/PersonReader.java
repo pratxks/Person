@@ -58,6 +58,7 @@ public class PersonReader
 
                     if(CSVArray.length == 5)
                     {
+                        //Person Record is created here and CSV array information is set to Person Object
                         Person PersonRecord = new Person();
 
                         PersonRecord.setM_ID(CSVArray[0]);
@@ -66,6 +67,7 @@ public class PersonReader
                         PersonRecord.setM_title(CSVArray[3]);
                         PersonRecord.setM_yearOfBirth(Integer.parseInt(CSVArray[4].trim()));
 
+                        //Person record is added to Person Array here
                         PersonRecordArray.add(PersonRecord);
                         line++;
                         // echo to screen
@@ -102,6 +104,7 @@ public class PersonReader
         String strDisplayUnderLine = String.format("%71s", " ").replace(' ', '=');
         System.out.println(strDisplayUnderLine);
 
+        //Person record array is traversed here for display of Person information on screen
         for(Person PersonRecord : PersonRecordArray)
         {
             String strDisplayRec = "";
